@@ -76,7 +76,7 @@ void executeToken(char **buf)
 #ifdef FORTH_DEBUG
                 SerialPrint("INFO: Jumping?\r\n");
 #endif
-                if (!pop())
+                if ((int64_t)pop() > 0)
                         *buf = (char *)pop();
                 return;
         }
